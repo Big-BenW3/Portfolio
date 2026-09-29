@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     <main className="project-section page-intro">
       <SectionTitle>All Projects</SectionTitle>
       <p className="page-kicker">
-        Everything in the sample folder — featured work and the rest of the shelf.
+        Everything in the sample folder: featured work and the rest of the shelf.
       </p>
       {projects.map((project) => (
         <ProjectCard key={project.slug} project={project} />

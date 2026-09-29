@@ -21,7 +21,7 @@ function download() {
     "",
     "Experience",
     ...experience.flatMap((item) => [
-      `${item.role} — ${item.company} (${item.dates})`,
+      `${item.role} - ${item.company} (${item.dates})`,
       ...item.description.map((line) => `- ${line}`),
       "",
     ]),

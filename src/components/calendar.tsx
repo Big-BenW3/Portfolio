@@ -68,7 +68,7 @@ export function Calendar() {
           {/* REAL: your GitHub login, not the display name. The squares below are still sample data, not your real graph. */}
           <strong>jordanhale</strong> on the contribution graph
         </span>
-        <span className="cal-count">{data ? `${data.total} contributions` : "—"}</span>
+        <span className="cal-count">{data ? `${data.total} contributions` : "-"}</span>
       </div>
       {data ? (
         <div className="cal-scroll">

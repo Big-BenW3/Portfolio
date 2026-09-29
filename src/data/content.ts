@@ -87,7 +87,7 @@ export const profile = {
   clubHref: LINKS.discord, // Discord: Server → Invite People → copy link. Or any community URL.
   clubOnline: "128 online", // Optional. Type a real count, or a short label like "open".
   quote: "Make it work, then make it feel inevitable.",
-  quoteBy: "— a note to future me",
+  quoteBy: "- a note to future me",
 };
 
 // Bio under the portrait. **double asterisks** render as bold. Rewrite all three lines.
@@ -169,21 +169,21 @@ export const experience: Experience[] = [
   {
     company: "Northwind Labs",
     role: "Product Engineer",
-    dates: "Dec 2025 — Now",
+    dates: "Dec 2025 - Now",
     status: "present",
     location: "Remote",
     mark: "NW",
     href: "https://example.com",
     description: [
       "Shipped a partner dashboard that crossed 1,200 weekly users.",
-      "Wrote the public build log — now past 5,000 readers.",
+      "Wrote the public build log, now past 5,000 readers.",
       "Kept the stack boring: TypeScript, Postgres, and a small deploy.",
     ],
   },
   {
     company: "Sample Studio",
     role: "Full Stack Intern",
-    dates: "May 2025 — Sep 2025",
+    dates: "May 2025 - Sep 2025",
     status: "past",
     location: "Hybrid",
     mark: "SS",
@@ -197,7 +197,7 @@ export const experience: Experience[] = [
   {
     company: "Open Workshop",
     role: "Maintainer",
-    dates: "Jun 2026 — Aug 2026",
+    dates: "Jun 2026 - Aug 2026",
     status: "future",
     location: "Remote",
     mark: "OW",
@@ -435,7 +435,7 @@ export const resume = {
   education: {
     school: "Sample University",
     program: "B.S. Computer Science",
-    dates: "2022 — 2026",
+    dates: "2022 - 2026",
   },
   skills: ["TypeScript", "React", "Node.js", "PostgreSQL", "Python", "Docker"],
 };

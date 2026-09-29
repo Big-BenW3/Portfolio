@@ -16,7 +16,7 @@ export function NotFoundView() {
         <p className="error-code">404</p>
         <h1>Page not found</h1>
         <p>This route is not on the map.</p>
-        <p>No stress — head home, or step back.</p>
+        <p>No stress. Head home, or step back.</p>
         <div className="error-actions">
           <Link href="/" className="action-btn primary">
             <IconArrowLeft size={16} /> Go home

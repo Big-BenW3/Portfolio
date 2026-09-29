@@ -12,7 +12,7 @@ export default function AnalyticsPage() {
     <main className="analytics-layout page-intro">
       <SectionTitle>Analytics</SectionTitle>
       <p className="page-kicker">
-        Sample traffic. Refresh redraws the same shape — wire a real source when you want
+        Sample traffic. Refresh redraws the same shape. Wire a real source when you want
         live numbers.
       </p>
       <AnalyticsPanel />

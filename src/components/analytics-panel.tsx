@@ -41,10 +41,10 @@ export function AnalyticsPanel() {
   return (
     <div>
       <div className="analytics-stats">
-        <Stat label="Visitors" value={ready ? visitors.toLocaleString() : "—"} change="+12.4%" />
-        <Stat label="Pageviews" value={ready ? views.toLocaleString() : "—"} change="+8.1%" />
-        <Stat label="Bounce" value={ready ? `${bounce}%` : "—"} change="-2.0%" down />
-        <Stat label="Avg. time" value={ready ? duration : "—"} change="+0.3%" />
+        <Stat label="Visitors" value={ready ? visitors.toLocaleString() : "-"} change="+12.4%" />
+        <Stat label="Pageviews" value={ready ? views.toLocaleString() : "-"} change="+8.1%" />
+        <Stat label="Bounce" value={ready ? `${bounce}%` : "-"} change="-2.0%" down />
+        <Stat label="Avg. time" value={ready ? duration : "-"} change="+0.3%" />
       </div>
       <div className="analytics-chart-card">
         <div className="analytics-chart-topbar">

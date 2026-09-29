@@ -47,7 +47,7 @@ export function Navbar() {
             );
           })}
         </nav>
-        <Tooltip text={starred ? "Starred — thank you" : "Give a star"} position="bottom">
+        <Tooltip text={starred ? "Starred, thank you" : "Give a star"} position="bottom">
           <button
             type="button"
             className={starred ? "navbar-star is-on" : "navbar-star"}

@@ -20,7 +20,7 @@ export default function UsesPage() {
             {group.items.map((item) => (
               <div key={item.label} className="uses-item">
                 <span className="uses-item-label">{item.label}</span>
-                <span className="uses-item-sep">—</span>
+                <span className="uses-item-sep">-</span>
                 <span className="uses-item-name">
                   {item.href ? (
                     <a href={item.href} target="_blank" rel="noreferrer">
