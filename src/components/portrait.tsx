@@ -1,0 +1,101 @@
+import { profileImage } from "@/data/links";
+
+const days = [
+  { name: "Sunday ring", hue: "#f59e0b" },
+  { name: "Monday slash", hue: "#60a5fa" },
+  { name: "Tuesday flame", hue: "#fbbf24" },
+  { name: "Wednesday spark", hue: "#22c55e" },
+  { name: "Thursday moon", hue: "#c4b5fd" },
+  { name: "Friday bloom", hue: "#fb7185" },
+  { name: "Saturday shy", hue: "#e5e5e5" },
+];
+
+// The real profile photo. `public/portrait.png` is a square 512×512 source, kept
+// from being cropped by the two slots that render it: the 132px hero avatar and
+// the 42px article author card (see `.hero-section-avatar`, `.author-ava` in
+// globals.css). Swap the file for any 1:1 image, or point `LINKS.portrait`
+// somewhere else in src/data/links.ts.
+//
+// `alt=""` is deliberate: the name is already in the <h1> next to this image, so
+// a description here would make screen readers announce it twice.
+export function Portrait() {
+  return (
+    <img
+      src={profileImage.path}
+      alt=""
+      className="portrait"
+      width={profileImage.width}
+      height={profileImage.height}
+    />
+  );
+}
+
+export function Decoration({ day }: { day: number }) {
+  const item = days[day] ?? days[0];
+  return (
+    <svg className="decoration" viewBox="0 0 200 200" aria-hidden="true">
+      <title>{item.name}</title>
+      {day === 0 && (
+        <g stroke={item.hue} fill="none" strokeWidth="2">
+          <circle cx="100" cy="100" r="92" strokeDasharray="4 8" />
+          <circle cx="168" cy="40" r="6" fill={item.hue} stroke="none" />
+        </g>
+      )}
+      {day === 1 && <path d="M30 30 L170 150" stroke={item.hue} strokeWidth="3" />}
+      {day === 2 && <path d="M150 28c8 18-6 22-2 36 8-6 16 2 10 16" stroke={item.hue} strokeWidth="3" fill="none" />}
+      {day === 3 && (
+        <g fill={item.hue}>
+          <circle cx="28" cy="46" r="3" />
+          <circle cx="170" cy="36" r="2.5" />
+          <circle cx="160" cy="170" r="3" />
+        </g>
+      )}
+      {day === 4 && <path d="M150 34a16 16 0 1 0 14 24 12 12 0 1 1-14-24Z" fill={item.hue} />}
+      {day === 5 && <path d="M156 48c10 8 8 22-2 24-8 10-22 6-24-4 8-2 12-10 10-18 6 2 12 0 16-2Z" fill={item.hue} />}
+      {day === 6 && (
+        <g fill="none" stroke={item.hue} strokeWidth="2">
+          <path d="M24 70c18-8 20 10 8 14" />
+          <path d="M176 120c-16 6-8 18 6 16" />
+        </g>
+      )}
+    </svg>
+  );
+}
+
+// REAL QR: put the URL you want (your site, GitHub, or a vCard) into any QR generator,
+// export an SVG, save it as public/qr.svg, and use <img src="/qr.svg" alt="" className="qr-face" />.
+// This drawing does not scan.
+export function QrFace() {
+  const cells: boolean[] = [];
+  for (let y = 0; y < 21; y += 1) {
+    for (let x = 0; x < 21; x += 1) {
+      const finder =
+        (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+      const ring =
+        finder &&
+        (x === 0 || y === 0 || x === 6 || y === 6 || x === 14 || y === 14 || x === 20 || y === 20 ||
+          (x > 1 && x < 5 && y > 1 && y < 5) ||
+          (x > 15 && x < 19 && y > 1 && y < 5) ||
+          (x > 1 && x < 5 && y > 15 && y < 19));
+      const noise = ((x * 17 + y * 13) % 7) > 3;
+      cells.push(ring || (!finder && noise));
+    }
+  }
+  return (
+    <svg className="qr-face" viewBox="0 0 21 21" role="img" aria-label="QR placeholder">
+      <rect width="21" height="21" fill="#f5f5f4" />
+      {cells.map((on, index) =>
+        on ? (
+          <rect
+            key={index}
+            x={index % 21}
+            y={Math.floor(index / 21)}
+            width="1"
+            height="1"
+            fill="#111"
+          />
+        ) : null,
+      )}
+    </svg>
+  );
+}
