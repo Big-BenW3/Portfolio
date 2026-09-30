@@ -4,7 +4,7 @@ import { PageLinks } from "@/components/chrome";
 import { SectionTitle } from "@/components/ui";
 
 // REAL: tab title. Use your name from profile.name.
-export const metadata: Metadata = { title: "Analytics | Jordan Hale" };
+export const metadata: Metadata = { title: "Analytics | Big Ben" };
 
 /** `/analytics` — ported from `src/routes/analytics.tsx`. */
 export default function AnalyticsPage() {

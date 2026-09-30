@@ -13,7 +13,7 @@ import {
  * `/` — ported from `src/routes/index.tsx`.
  *
  * No route-level `metadata`: the root layout's title is already
- * "Jordan Hale | Full Stack Developer", which is exactly what this page used.
+ * "Big Ben | Blockchain Developer", which is exactly what this page used.
  */
 export default function Home() {
   return (

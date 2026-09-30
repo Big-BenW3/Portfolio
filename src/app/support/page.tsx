@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SupportView } from "@/components/support-view";
 
 // REAL: tab title. Use your name from profile.name.
-export const metadata: Metadata = { title: "Support | Jordan Hale" };
+export const metadata: Metadata = { title: "Support | Big Ben" };
 
 /** `/support` — server shell; the interactive body lives in `SupportView`. */
 export default function SupportPage() {

@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/ui";
 import { projects } from "@/data/content";
 
 // REAL: tab title. Use your name from profile.name.
-export const metadata: Metadata = { title: "Projects | Jordan Hale" };
+export const metadata: Metadata = { title: "Projects | Big Ben" };
 
 /** `/projects` — ported from `src/routes/projects.tsx`. */
 export default function ProjectsPage() {

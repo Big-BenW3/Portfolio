@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/ui";
 import { uses } from "@/data/content";
 
 // REAL: tab title. Use your name from profile.name.
-export const metadata: Metadata = { title: "Uses | Jordan Hale" };
+export const metadata: Metadata = { title: "Uses | Big Ben" };
 
 /** `/uses` — ported from `src/routes/uses.tsx`. */
 export default function UsesPage() {

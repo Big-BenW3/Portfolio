@@ -6,7 +6,7 @@ import { SectionTitle } from "@/components/ui";
 import { posts } from "@/data/content";
 
 // REAL: tab title. Use your name from profile.name.
-export const metadata: Metadata = { title: "Notes | Jordan Hale" };
+export const metadata: Metadata = { title: "Notes | Big Ben" };
 
 /** `/blogs` — ported from `src/routes/blogs/index.tsx`. */
 export default function BlogsPage() {

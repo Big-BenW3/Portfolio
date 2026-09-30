@@ -62,40 +62,20 @@ export function Decoration({ day }: { day: number }) {
   );
 }
 
-// REAL QR: put the URL you want (your site, GitHub, or a vCard) into any QR generator,
-// export an SVG, save it as public/qr.svg, and use <img src="/qr.svg" alt="" className="qr-face" />.
-// This drawing does not scan.
+// REAL QR: renders https://github.com/Big-BenW3 via a remote QR image (no new
+// dependency, no build-time download). Swap QR_URL for your site/X/vCard.
+const QR_URL = "https://github.com/Big-BenW3";
+const QR_SRC = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=4&color=111111&bgcolor=f5f5f4&data=${encodeURIComponent(QR_URL)}`;
 export function QrFace() {
-  const cells: boolean[] = [];
-  for (let y = 0; y < 21; y += 1) {
-    for (let x = 0; x < 21; x += 1) {
-      const finder =
-        (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
-      const ring =
-        finder &&
-        (x === 0 || y === 0 || x === 6 || y === 6 || x === 14 || y === 14 || x === 20 || y === 20 ||
-          (x > 1 && x < 5 && y > 1 && y < 5) ||
-          (x > 15 && x < 19 && y > 1 && y < 5) ||
-          (x > 1 && x < 5 && y > 15 && y < 19));
-      const noise = ((x * 17 + y * 13) % 7) > 3;
-      cells.push(ring || (!finder && noise));
-    }
-  }
   return (
-    <svg className="qr-face" viewBox="0 0 21 21" role="img" aria-label="QR placeholder">
-      <rect width="21" height="21" fill="#f5f5f4" />
-      {cells.map((on, index) =>
-        on ? (
-          <rect
-            key={index}
-            x={index % 21}
-            y={Math.floor(index / 21)}
-            width="1"
-            height="1"
-            fill="#111"
-          />
-        ) : null,
-      )}
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={QR_SRC}
+      alt={`QR code linking to ${QR_URL}`}
+      className="qr-face"
+      width={220}
+      height={220}
+      loading="lazy"
+    />
   );
 }

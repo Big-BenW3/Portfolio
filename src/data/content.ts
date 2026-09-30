@@ -68,15 +68,15 @@ export type Block =
 // - Company site: the company's own homepage, not a job-board listing.
 // - Discord invite: Server name → Invite People → copy the invite link.
 // - Share-card name (not a URL): `src/lib/og/site.json` → `title`.
-// Page titles that still say "Jordan Hale" are in each file under `src/routes/`.
+// Page titles that say "Big Ben" live in each file under `src/app/`.
 export const profile = {
-  name: "Jordan Hale", // Your name, as you want it on the page.
+  name: "Big Ben", // Your name, as you want it on the page.
   handle: LINKS.handleText, // The @ people click. From src/data/links.ts.
   handleHref: LINKS.handleUrl, // Profile URL for that handle.
-  role: "Full Stack Developer",
+  role: "Blockchain and Mobile Developer",
   status: LINKS.statusText, // One line about what you are doing now.
   statusHref: LINKS.statusUrl, // Link for that status. The product URL, or your repo if it is not deployed.
-  location: "City, Country",
+  location: "Owerri, Nigeria",
   email: LINKS.email, // From src/data/links.ts. The contact row's mailto reads the same value.
   xName: LINKS.xName, // Display name on your X profile.
   xHandle: LINKS.xHandle, // @handle shown on x.com/<handle>
@@ -128,8 +128,10 @@ export const languages: Skill[] = [
   { name: "TypeScript", color: "#3178c6", logo: "/logos/typescript.svg" },
   { name: "JavaScript", color: "#f7df1e", logo: "/logos/javascript.svg" },
   { name: "Python", color: "#3776ab", logo: "/logos/python.svg" },
-  { name: "Java", color: "#0074bd", logo: "/logos/java.svg" },
-  { name: "GraphQL", color: "#e10098", logo: "/logos/graphql.svg" },
+  { name: "Rust", color: "#CE422B", logo: "https://cdn.simpleicons.org/rust/CE422B" },
+  { name: "Solidity", color: "#363636", logo: "https://cdn.simpleicons.org/solidity/363636" },
+  { name: "Dart", color: "#0175C2", logo: "https://cdn.simpleicons.org/dart/0175C2" },
+  { name: "C#", color: "#9B4F96", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
 ];
 
 export const frameworks: Skill[] = [
@@ -137,7 +139,10 @@ export const frameworks: Skill[] = [
   { name: "Node.js", color: "#5fa04e", logo: "/logos/nodejs.svg" },
   { name: "Next.js", color: "#ffffff", logo: "/logos/nextjs.svg" },
   { name: "Tailwind", color: "#06b6d4", logo: "/logos/tailwind.svg" },
-  { name: "Spring", color: "#6db33f", logo: "/logos/spring.svg" },
+  { name: "Flutter", color: "#02569B", logo: "https://cdn.simpleicons.org/flutter/02569B" },
+  { name: "Express", color: "#ffffff", logo: "https://cdn.simpleicons.org/express/FFFFFF" },
+  { name: "FastAPI", color: "#009688", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+  { name: "Anchor", color: "#9945FF", logo: "https://cdn.simpleicons.org/solana/9945FF" },
 ];
 
 export const tools: Skill[] = [
@@ -147,15 +152,11 @@ export const tools: Skill[] = [
   { name: "Postman", color: "#ff6c37", logo: "/logos/postman.svg" },
   { name: "Vercel", color: "#ffffff", logo: "/logos/vercel.svg" },
   { name: "GitHub", color: "#ffffff", logo: "/logos/github.svg" },
-  { name: "Linear", color: "#5e6ad2", logo: "/logos/linear.svg" },
-  { name: "Arc", color: "#ffffff", logo: "/logos/arc.svg" },
+  { name: "Brave", color: "#FB542B", logo: "https://cdn.simpleicons.org/brave/FB542B" },
   { name: "Terminal", color: "#4eaa25", logo: "/logos/terminal.svg" },
-  { name: "Chrome", color: "#4285f4", logo: "/logos/chrome.svg" },
   { name: "Obsidian", color: "#7c3aed", logo: "/logos/obsidian.svg" },
   { name: "Slack", color: "#e01e5a", logo: "/logos/slack.svg" },
-  { name: "Discord", color: "#5865f2", logo: "/logos/discord.svg" },
-  { name: "Neovim", color: "#57a143", logo: "/logos/neovim.svg" },
-  { name: "Zed", color: "#ffffff", logo: "/logos/zed.svg" },
+  { name: "Android Studio", color: "#3DDC84", logo: "https://cdn.simpleicons.org/androidstudio/3DDC84" },
   { name: "PostgreSQL", color: "#4169e1", logo: "/logos/postgresql.svg" },
   { name: "MongoDB", color: "#47a248", logo: "/logos/mongodb.svg" },
   { name: "Docker", color: "#2496ed", logo: "/logos/docker.svg" },
@@ -167,43 +168,29 @@ export const tools: Skill[] = [
 // Delete `href` if you do not want the external icon. `mark` is the two letters in the timeline badge.
 export const experience: Experience[] = [
   {
-    company: "Northwind Labs",
-    role: "Product Engineer",
-    dates: "Dec 2025 - Now",
+    company: "NexusBert Technology Labs",
+    role: "Blockchain Developer Intern",
+    dates: "2025 - Now",
     status: "present",
-    location: "Remote",
-    mark: "NW",
-    href: "https://example.com",
+    location: "Nigeria",
+    mark: "NB",
     description: [
-      "Shipped a partner dashboard that crossed 1,200 weekly users.",
-      "Wrote the public build log, now past 5,000 readers.",
-      "Kept the stack boring: TypeScript, Postgres, and a small deploy.",
+      "Building on-chain features with Solidity and TypeScript.",
+      "Shipping internal tooling and test coverage for smart-contract releases.",
+      "Collaborating remotely across API, interface, and release.",
     ],
   },
   {
-    company: "Sample Studio",
-    role: "Full Stack Intern",
-    dates: "May 2025 - Sep 2025",
+    company: "Independent",
+    role: "Indie Hacker",
+    dates: "2024 - Dec 2025",
     status: "past",
-    location: "Hybrid",
-    mark: "SS",
-    href: "https://example.com",
-    description: [
-      "Built a practice arena where people solved short coding prompts.",
-      "Added a leaderboard so weekly challenges had somewhere to land.",
-      "Collaborated remotely across API, interface, and release.",
-    ],
-  },
-  {
-    company: "Open Workshop",
-    role: "Maintainer",
-    dates: "Jun 2026 - Aug 2026",
-    status: "future",
     location: "Remote",
-    mark: "OW",
+    mark: "IH",
     description: [
-      "Upcoming residency: three reviewed issues a week, in public.",
-      "Office hours for first-time contributors.",
+      "Shipped small side projects end to end, from idea to deploy.",
+      "Built mobile and web experiments with Flutter, React, and Node.",
+      "Learned in public and iterated from real user feedback.",
     ],
   },
 ];
@@ -433,9 +420,9 @@ export const resume = {
   summary:
     "Full-stack developer who likes small products, clear interfaces, and code that another person can run on a Monday morning.",
   education: {
-    school: "Sample University",
+    school: "Federal University of Technology Owerri",
     program: "B.S. Computer Science",
-    dates: "2022 - 2026",
+    dates: "2024 - 2029 (in view)",
   },
   skills: ["TypeScript", "React", "Node.js", "PostgreSQL", "Python", "Docker"],
 };

@@ -32,11 +32,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   // REAL: browser tab title and the description search engines read. Use your
-  // name and a one-line bio. Other routes hardcode "Jordan Hale" in their own
+  // name and a one-line bio. Other routes hardcode "Big Ben" in their own
   // `metadata` — match `profile.name` in src/data/content.ts.
-  title: "Jordan Hale | Full Stack Developer",
-  description:
-    "Sample portfolio for Jordan Hale, a full-stack developer. Projects, notes, and a way to get in touch.",
+  title: "Big Ben | Blockchain Developer",
+  description: "Portfolio for Big Ben, a Blockchain and Mobile developer. Projects, notes, and a way to get in touch.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/__grok/icon-180.png" }],
@@ -48,17 +47,15 @@ export const metadata: Metadata = {
   // pasting the link anywhere yields a bare preview.
   openGraph: {
     type: "website",
-    siteName: "Jordan Hale",
-    title: "Jordan Hale | Full Stack Developer",
-    description:
-      "Sample portfolio for Jordan Hale, a full-stack developer. Projects, notes, and a way to get in touch.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Jordan Hale" }],
+    siteName: "Big Ben",
+    title: "Big Ben | Blockchain Developer",
+    description: "Portfolio for Big Ben, a Blockchain and Mobile developer. Projects, notes, and a way to get in touch.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Big Ben" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jordan Hale | Full Stack Developer",
-    description:
-      "Sample portfolio for Jordan Hale, a full-stack developer. Projects, notes, and a way to get in touch.",
+    title: "Big Ben | Blockchain Developer",
+    description: "Portfolio for Big Ben, a Blockchain and Mobile developer. Projects, notes, and a way to get in touch.",
     images: ["/og.jpg"],
   },
 };

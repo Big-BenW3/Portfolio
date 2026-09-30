@@ -26,8 +26,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = findPost(slug);
-  // REAL: the "| Jordan Hale" suffix. Use your name from profile.name.
-  return { title: post ? `${post.title} | Jordan Hale` : "Note" };
+  // REAL: the "| Big Ben" suffix. Use your name from profile.name.
+  return { title: post ? `${post.title} | Big Ben` : "Note" };
 }
 
 export default async function PostPage({ params }: PageProps) {

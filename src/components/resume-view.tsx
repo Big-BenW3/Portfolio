@@ -35,7 +35,7 @@ function download() {
   const anchor = document.createElement("a");
   anchor.href = url;
   // REAL: file name people download. For a PDF instead of this generated .txt, see the comment on `resume` in src/data/content.ts.
-  anchor.download = "jordan-hale-resume.txt";
+  anchor.download = "big-ben-resume.txt";
   anchor.click();
   URL.revokeObjectURL(url);
 }

@@ -23,22 +23,22 @@ const MIN_BODY_TEXT = 200;
 
 /** null title = accepted as-is (dynamic route). */
 const ROUTES = [
-  { path: "/", title: "Jordan Hale | Full Stack Developer" },
-  { path: "/projects", title: "Projects | Jordan Hale" },
-  { path: "/blogs", title: "Notes | Jordan Hale" },
+  { path: "/", title: "Big Ben | Blockchain Developer" },
+  { path: "/projects", title: "Projects | Big Ben" },
+  { path: "/blogs", title: "Notes | Big Ben" },
   {
     path: "/blogs/how-to-plan-a-project",
-    title: "How to plan a project from a blank page | Jordan Hale",
+    title: "How to plan a project from a blank page | Big Ben",
   },
   {
     path: "/blogs/portfolio-notes",
-    title: "Notes before you publish a portfolio | Jordan Hale",
+    title: "Notes before you publish a portfolio | Big Ben",
   },
-  { path: "/resume", title: "Resume | Jordan Hale" },
-  { path: "/uses", title: "Uses | Jordan Hale" },
-  { path: "/support", title: "Support | Jordan Hale" },
-  { path: "/analytics", title: "Analytics | Jordan Hale" },
-  { path: "/this-route-does-not-exist", title: "Page not found | Jordan Hale", expect404: true },
+  { path: "/resume", title: "Resume | Big Ben" },
+  { path: "/uses", title: "Uses | Big Ben" },
+  { path: "/support", title: "Support | Big Ben" },
+  { path: "/analytics", title: "Analytics | Big Ben" },
+  { path: "/this-route-does-not-exist", title: "Page not found | Big Ben", expect404: true },
 ];
 
 const VIEWPORTS = [

@@ -41,7 +41,7 @@ export function Hero() {
             <button
               type="button"
               className="qr-toggle-btn"
-              aria-label={qr ? "Show portrait" : "Show QR placeholder"}
+              aria-label={qr ? "Show portrait" : "Show QR code"}
               onClick={() => setQr((value) => !value)}
             >
               {qr ? <IconUser size={14} /> : <IconQr size={14} />}

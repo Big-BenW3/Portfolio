@@ -22,25 +22,25 @@
  */
 export const LINKS = {
   // --- Identity: the @handle people click, and where it goes ---
-  handleText: "@jordanhale",
-  handleUrl: "https://example.com",
+  handleText: "@Big-BenW3",
+  handleUrl: "https://github.com/Big-BenW3",
 
   // --- One line about what you are doing now, and a link for it ---
-  statusText: "Building sample.app",
+  statusText: "Building Lenear",
   statusUrl: "https://example.com",
 
   // --- Contact ---
   email: "hello@example.com",
 
   // --- Social accounts. Used by both the hero icon row and the contact row. ---
-  github: "https://example.com",
-  linkedin: "https://example.com",
+  github: "https://github.com/Big-BenW3",
+  linkedin: "https://linkedin.com/in/bigbenw3",
   instagram: "https://example.com",
-  x: "https://example.com",
+  x: "https://x.com/Web3_Banditt",
 
   // --- X profile display name and @handle (can differ from the GitHub one) ---
-  xName: "Jordan Hale",
-  xHandle: "@jordanhale",
+  xName: "Big Ben",
+  xHandle: "@Web3_Banditt",
 
   // --- Community card under the bio (Discord server, or any community URL) ---
   discord: "https://example.com",
