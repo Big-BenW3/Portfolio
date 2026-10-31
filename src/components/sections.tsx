@@ -1,6 +1,7 @@
 "use client";
 
 
+import Link from "next/link";
 import { AppLink } from "@/components/app-link";
 import { useState } from "react";
 import {
@@ -130,7 +131,11 @@ export function ExperienceSection() {
   );
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+}: {
+  project: Project;
+}) {
   return (
     <article className="project-card">
       <div className="banner">
@@ -184,7 +189,9 @@ export function ProjectsPreview() {
     <section className="project-section">
       <SectionTitle>My Projects</SectionTitle>
       {featured.map((project) => (
-        <ProjectCard key={project.slug} project={project} />
+        <Link key={project.slug} href={`/projects/${project.slug}`} passHref legacyBehavior>
+          <ProjectCard key={project.slug} project={project} />
+        </Link>
       ))}
       <div className="view-all-projects">
         <span />

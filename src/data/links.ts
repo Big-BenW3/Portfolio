@@ -36,7 +36,7 @@ export const LINKS = {
   github: "https://github.com/Big-BenW3",
   linkedin: "https://linkedin.com/in/bigbenw3",
   instagram: "https://example.com",
-  x: "https://x.com/Web3_Banditt",
+  x: "https://x.com/banditdotsol",
 
   // --- X profile display name and @handle (can differ from the GitHub one) ---
   xName: "Big Ben",
@@ -50,7 +50,7 @@ export const LINKS = {
   coffee: "https://example.com/coffee",
 
   // --- Images. See `profileImage` below for sizing guidance. ---
-  portrait: "/portrait.png",
+  portrait: "/BigBen.png",
 } as const;
 
 /** Build a `mailto:` URL, defaulting to the contact address above. */

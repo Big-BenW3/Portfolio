@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { PageLinks } from "@/components/chrome";
 import { ProjectCard } from "@/components/sections";
@@ -16,7 +17,9 @@ export default function ProjectsPage() {
         Everything in the sample folder: featured work and the rest of the shelf.
       </p>
       {projects.map((project) => (
-        <ProjectCard key={project.slug} project={project} />
+        <Link key={project.slug} href={`/projects/${project.slug}`} passHref legacyBehavior>
+          <ProjectCard key={project.slug} project={project} />
+        </Link>
       ))}
       <PageLinks forward="/blogs" forwardLabel="Read notes" />
     </main>

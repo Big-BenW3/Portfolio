@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <ExperienceSection />
-      <div className="experience-section">
+      <div className="experience-section calendar-wrapper">
         <Calendar />
       </div>
       <ProjectsPreview />

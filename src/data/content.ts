@@ -92,7 +92,7 @@ export const profile = {
 
 // Bio under the portrait. **double asterisks** render as bold. Rewrite all three lines.
 export const bio = [
-  "Hi, I am a **Full Stack Developer**.",
+  "Hi, I am a **Blockchain Developer**.",
   "Builder of **Sample**, a small toolkit that helps people **ship** side projects.",
   "Always **sketching**, **learning**, and turning rough ideas into products people actually open.",
 ];
@@ -103,18 +103,18 @@ export const heroSocials: Social[] = [
   { name: "GitHub", href: LINKS.github, color: "#ffffff" },
   { name: "Resume", href: "/resume", color: "#ff6b6b", internal: true },
   { name: "Writing", href: "/blogs", color: "#b3b3b3", internal: true },
-  { name: "Instagram", href: LINKS.instagram, color: "#e4405f" },
-  { name: "LinkedIn", href: LINKS.linkedin, color: "#0a66c2" },
+  // { name: "Instagram", href: LINKS.instagram, color: "#e4405f" },
+  // { name: "LinkedIn", href: LINKS.linkedin, color: "#0a66c2" },
 ];
 
 // Same accounts as heroSocials, in the contact row. Email uses the same address
 // as profile.email because both read LINKS.email.
 export const contactLinks: Social[] = [
   { name: "X", href: LINKS.x, color: "#ffffff" },
-  { name: "LinkedIn", href: LINKS.linkedin, color: "#0a66c2" },
+  // { name: "LinkedIn", href: LINKS.linkedin, color: "#0a66c2" },
   { name: "GitHub", href: LINKS.github, color: "#ffffff" },
-  { name: "Instagram", href: LINKS.instagram, color: "#e4405f" },
-  { name: "Writing", href: "/blogs", color: "#b3b3b3", internal: true },
+  // { name: "Instagram", href: LINKS.instagram, color: "#e4405f" },
+  // { name: "Writing", href: "/blogs", color: "#b3b3b3", internal: true },
   { name: "Email", href: mailto(), color: "#ea4335" },
   { name: "Resume", href: "/resume", color: "#ff6b6b", internal: true },
 ];
@@ -131,7 +131,6 @@ export const languages: Skill[] = [
   { name: "Rust", color: "#CE422B", logo: "https://cdn.simpleicons.org/rust/CE422B" },
   { name: "Solidity", color: "#363636", logo: "https://cdn.simpleicons.org/solidity/363636" },
   { name: "Dart", color: "#0175C2", logo: "https://cdn.simpleicons.org/dart/0175C2" },
-  { name: "C#", color: "#9B4F96", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
 ];
 
 export const frameworks: Skill[] = [
@@ -143,6 +142,9 @@ export const frameworks: Skill[] = [
   { name: "Express", color: "#ffffff", logo: "https://cdn.simpleicons.org/express/FFFFFF" },
   { name: "FastAPI", color: "#009688", logo: "https://cdn.simpleicons.org/fastapi/009688" },
   { name: "Anchor", color: "#9945FF", logo: "https://cdn.simpleicons.org/solana/9945FF" },
+  // React Native
+  // Honojs 
+  // Bun
 ];
 
 export const tools: Skill[] = [
@@ -152,14 +154,11 @@ export const tools: Skill[] = [
   { name: "Postman", color: "#ff6c37", logo: "/logos/postman.svg" },
   { name: "Vercel", color: "#ffffff", logo: "/logos/vercel.svg" },
   { name: "GitHub", color: "#ffffff", logo: "/logos/github.svg" },
-  { name: "Brave", color: "#FB542B", logo: "https://cdn.simpleicons.org/brave/FB542B" },
   { name: "Terminal", color: "#4eaa25", logo: "/logos/terminal.svg" },
   { name: "Obsidian", color: "#7c3aed", logo: "/logos/obsidian.svg" },
-  { name: "Slack", color: "#e01e5a", logo: "/logos/slack.svg" },
   { name: "Android Studio", color: "#3DDC84", logo: "https://cdn.simpleicons.org/androidstudio/3DDC84" },
   { name: "PostgreSQL", color: "#4169e1", logo: "/logos/postgresql.svg" },
   { name: "MongoDB", color: "#47a248", logo: "/logos/mongodb.svg" },
-  { name: "Docker", color: "#2496ed", logo: "/logos/docker.svg" },
   { name: "Redis", color: "#ff4438", logo: "/logos/redis.svg" },
   { name: "Git", color: "#f05032", logo: "/logos/git.svg" },
 ];
@@ -168,29 +167,29 @@ export const tools: Skill[] = [
 // Delete `href` if you do not want the external icon. `mark` is the two letters in the timeline badge.
 export const experience: Experience[] = [
   {
-    company: "NexusBert Technology Labs",
-    role: "Blockchain Developer Intern",
-    dates: "2025 - Now",
+    company: "Freelance",
+    role: "Full Stack Developer",
+    dates: "2025 - 2026",
     status: "present",
-    location: "Nigeria",
-    mark: "NB",
+    location: "Remote",
+    mark: "FL",
     description: [
-      "Building on-chain features with Solidity and TypeScript.",
-      "Shipping internal tooling and test coverage for smart-contract releases.",
-      "Collaborating remotely across API, interface, and release.",
+      "Shipping small side projects end to end, from idea to deploy.",
+      "Building mobile and web experiments with Flutter, React, and Node.",
+      "Helping indie founders turn rough ideas into products people actually open.",
     ],
   },
   {
-    company: "Independent",
-    role: "Indie Hacker",
-    dates: "2024 - Dec 2025",
+    company: "Academy",
+    role: "Software Intern",
+    dates: "2024 - 2025",
     status: "past",
     location: "Remote",
-    mark: "IH",
+    mark: "AC",
     description: [
-      "Shipped small side projects end to end, from idea to deploy.",
-      "Built mobile and web experiments with Flutter, React, and Node.",
-      "Learned in public and iterated from real user feedback.",
+      "Learning full-stack development through hands-on project work.",
+      "Building small tools and shipping them to real users.",
+      "Iterating in public and growing from real user feedback.",
     ],
   },
 ];
