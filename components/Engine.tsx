@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { initExperience } from "./experience";
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => r.querySelector<T>(s);
@@ -83,7 +84,8 @@ function useScrollEngine(pathname: string) {
       return { root, track, cards: [...track.children] as HTMLElement[], dir: root.dataset.dir ?? "ltr", range: 0, top: 0, count: $(".count", root)!, bar: $(".bar i", root)!, total: track.children.length };
     });
     const acards = $$(".acard");
-    const navSecs = ["stack", "work", "about", "contact"].map((id) => [id, document.getElementById(id)] as const);
+    const xp = initExperience(reduce);
+    const navSecs = ["stack", "work", "experience", "about", "contact"].map((id) => [id, document.getElementById(id)] as const);
 
     const setPans = () => $$<HTMLImageElement>(".shot img").forEach((img) => {
       const box = img.parentElement!;
@@ -98,6 +100,7 @@ function useScrollEngine(pathname: string) {
       });
       stages.forEach((s) => { s.top = s.root.getBoundingClientRect().top + scrollY; });
       setPans();
+      xp.measure();
     };
 
     const frame = () => {
@@ -121,6 +124,8 @@ function useScrollEngine(pathname: string) {
         s.count.textContent = String(best + 1).padStart(2, "0") + " / " + String(s.total).padStart(2, "0");
         s.bar.style.setProperty("--p", p.toFixed(3));
       });
+
+      xp.frame();
 
       acards.forEach((c, i) => {
         const next = acards[i + 1];
@@ -156,6 +161,7 @@ function useScrollEngine(pathname: string) {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", relayout);
       window.removeEventListener("load", relayout);
+      xp.destroy();
     };
   }, [pathname]);
 }

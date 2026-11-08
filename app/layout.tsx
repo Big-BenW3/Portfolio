@@ -7,7 +7,7 @@ import DateTime from "@/components/DateTime";
 import Engine from "@/components/Engine";
 
 export const metadata: Metadata = {
-  title: "Big Ben Portfolio",
+  title: "BIG BEN — Software Engineer",
   description: "Big Ben: mobile developer, blockchain developer and fullstack builder.",
 };
 

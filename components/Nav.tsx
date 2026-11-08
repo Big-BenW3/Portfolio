@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { MouseEvent } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { BBMark } from "./Icons";
 
-const SECTIONS = [
+const SECTIONS: [string, ReactNode][] = [
   ["stack", "Stack"],
   ["work", "Work"],
+  ["experience", <><span className="long">Experience</span><span className="short">Exp.</span></>],
   ["about", "About"],
-] as const;
+];
 
 export default function Nav() {
   const pathname = usePathname();
