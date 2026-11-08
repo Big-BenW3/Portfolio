@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* marks the document as JS-enabled before first paint so entrance animations can start hidden */}
-        <script dangerouslySetInnerHTML={{ __html: 'document.documentElement.classList.add("js")' }} />
+        {/* marks the document as JS-enabled before first paint so entrance animations can start hidden; touch devices get the lighter effects (lite), and a device that struggled earlier this session starts in slow mode */}
+        <script dangerouslySetInnerHTML={{ __html: 'var d=document.documentElement;d.classList.add("js");try{if(matchMedia("(hover: none)").matches)d.classList.add("lite");if(sessionStorage.getItem("slow")==="1")d.classList.add("slow")}catch(e){}' }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

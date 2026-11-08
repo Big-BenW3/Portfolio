@@ -25,7 +25,7 @@ function Phones({ p }: { p: Project }) {
       {order.map((slot, k) =>
         imgs.length ? (
           <div key={slot} className={`ph ph${slot} has-img`}>
-            <div className="ph-scr"><img src={imgs[k]} alt={`${p.name} screen ${k + 1}`} /></div>
+            <div className="ph-scr"><img src={imgs[k]} alt={`${p.name} screen ${k + 1}`} decoding="async" /></div>
           </div>
         ) : (
           <div key={slot} className={`ph ph${slot}`}><div className="ph-scr">{PLACEHOLDERS[slot]()}</div></div>
@@ -38,7 +38,7 @@ function Phones({ p }: { p: Project }) {
 function Preview({ p }: { p: Project }) {
   if (p.screens) return <Phones p={p} />;
   const host = (p.live ?? p.gh).replace(/^https?:\/\//, "").replace(/\/$/, "");
-  const img = <img src={`/shots/${p.shot}.webp`} alt={`Preview of ${p.name}`} />;
+  const img = <img src={`/shots/${p.shot}.webp`} alt={`Preview of ${p.name}`} decoding="async" />;
   return (
     <div className="pv">
       <div className="frame">
@@ -61,6 +61,7 @@ function Card({ p }: { p: Project }) {
     <article className="card" style={vars({ "--h": p.h })}>
       <div className="card-inner">
         <Preview p={p} />
+        <i className="dim" aria-hidden="true" />
         <div className="card-body">
           <div className="card-top">{p.kind}</div>
           <h3>{p.name}</h3>

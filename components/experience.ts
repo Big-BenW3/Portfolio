@@ -1,4 +1,5 @@
 import { ROAD } from "./experienceRoad";
+import { svh } from "./viewport";
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 const ease = (t: number) => t * t * (3 - 2 * t);
@@ -30,9 +31,13 @@ type Slot = { x: number; y: number; h: number };
  */
 export function initExperience(reduce: boolean) {
   const sec = document.getElementById("experience");
-  const noop = { measure() {}, frame() {}, destroy() {} };
+  const noop = { measure() {}, frame() {}, degrade() {}, destroy() {} };
   if (!sec) return noop;
-  if (reduce) { sec.classList.add("xstatic"); return { ...noop, destroy: () => sec.classList.remove("xstatic") }; }
+  // Phones get a plain timeline: a tilted 3D road is the heaviest thing on the page and barely readable at that size.
+  const phone = matchMedia("(max-width: 700px)").matches;
+  let lowPower = false;
+  try { lowPower = sessionStorage.getItem("slow") === "1"; } catch { /* private mode */ }
+  if (reduce || phone || lowPower) { sec.classList.add("xstatic"); return { ...noop, destroy: () => sec.classList.remove("xstatic") }; }
 
   const q = <T extends Element>(s: string) => sec.querySelector<T>(s)!;
   const head = q<HTMLElement>(".xhead"), world = q<HTMLElement>("#xWorld"), plane = q<HTMLElement>("#xPlane");
@@ -41,13 +46,14 @@ export function initExperience(reduce: boolean) {
   const rings = [...sec.querySelectorAll<HTMLElement>(".xring")];
   const cards = [...list.children] as HTMLElement[];
 
-  let lastLabel = "";
+  let lastLabel = "", disabled = false;
   let grid = true, xw = 360, fy = 0, hMax = 0;
   let hFull: number[] = [], hComp: number[] = [], slots: Slot[] = [];
   let comp: boolean[] = [], ch: number[] = [];
 
   function measure() {
-    const vw = innerWidth, vh = innerHeight, g = clamp(vw * 0.05, 16, 64);
+    if (disabled) return;
+    const vw = innerWidth, vh = svh(), g = clamp(vw * 0.05, 16, 64);
     grid = vw >= 980;
     xw = grid ? Math.min(400, (Math.min(vw, 1240) - 2 * g - 40) / 3) : Math.min(440, vw - 2 * g);
     list.style.setProperty("--xw", xw + "px");
@@ -75,7 +81,8 @@ export function initExperience(reduce: boolean) {
   }
 
   function frame() {
-    const vw = innerWidth, vh = innerHeight, r = sec!.getBoundingClientRect();
+    if (disabled) return;
+    const vw = innerWidth, vh = svh(), r = sec!.getBoundingClientRect();
     if (r.bottom < -60 || r.top > vh + 60 || !slots.length) return;
     const tin = ease(clamp((vh - r.top) / (vh * 0.9), 0, 1));
     const p = clamp(-r.top / Math.max(1, r.height - vh), 0, 1);
@@ -113,8 +120,21 @@ export function initExperience(reduce: boolean) {
     const idx = Math.max(1, ARRIVE.filter((a) => p >= a - 0.04).length);
     const label = "0" + idx + " / 03";
     if (label !== lastLabel) { lastLabel = label; count.textContent = label; }
-    bar.style.setProperty("--p", clamp(len / ROAD.wpLen[2], 0, 1).toFixed(3));
+    bar.style.transform = `scaleX(${clamp(len / ROAD.wpLen[2], 0, 1).toFixed(3)})`;
   }
 
-  return { measure, frame, destroy() {} };
+  /** Switch to the flat timeline when the device cannot keep up with the 3D road. */
+  function degrade() {
+    if (disabled) return;
+    disabled = true;
+    sec!.classList.add("xstatic");
+    sec!.style.height = "";
+    cards.forEach((c) => {
+      c.classList.remove("compact");
+      ["opacity", "transform", "height", "z-index", "pointer-events", "--stem"].forEach((k) => c.style.removeProperty(k));
+    });
+    world.style.perspectiveOrigin = ""; plane.removeAttribute("style"); mark.removeAttribute("style"); rail.removeAttribute("style");
+  }
+
+  return { measure, frame, degrade, destroy() {} };
 }

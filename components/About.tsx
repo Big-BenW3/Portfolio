@@ -19,6 +19,7 @@ export default function About() {
       <div className="acards">
         {CARDS.map((c, i) => (
           <article key={c.tag} className="acard" style={vars({ "--i": i, "--h": c.h })}>
+            <i className="dim" aria-hidden="true" />
             <div className="top"><b>{c.tag}</b></div>
             <h3>{c.title}</h3>
             <p>{c.body}</p>

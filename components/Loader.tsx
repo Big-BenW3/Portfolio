@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BBMark } from "./Icons";
 
-/** Loading screen. Progress reflects real work: fonts, preview images, the page itself. */
+/** Loading screen. Progress reflects real work: fonts and the page itself. Preview images decode on their own, off the critical path. */
 export default function Loader() {
   const root = useRef<HTMLDivElement>(null);
   const label = useRef<HTMLSpanElement>(null);
@@ -24,10 +24,9 @@ export default function Loader() {
     }
     const steps: [string, Promise<unknown>][] = [
       ["Loading type", document.fonts?.ready ?? Promise.resolve()],
-      ["Decoding previews", Promise.all([...document.images].map((i) => (i.decode ? i.decode().catch(() => {}) : null)))],
       ["Setting the stage", document.readyState === "complete" ? Promise.resolve() : new Promise((r) => addEventListener("load", r, { once: true }))],
     ];
-    const MIN = 1400, MAX = 4200;
+    const MIN = 1100, MAX = 3500;
     const t0 = performance.now();
     let done = 0, shown = 0, finished = false, raf = 0;
     const timers: ReturnType<typeof setTimeout>[] = [];
