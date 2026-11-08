@@ -37,10 +37,11 @@ export function initExperience(reduce: boolean) {
   const q = <T extends Element>(s: string) => sec.querySelector<T>(s)!;
   const head = q<HTMLElement>(".xhead"), world = q<HTMLElement>("#xWorld"), plane = q<HTMLElement>("#xPlane");
   const mark = q<HTMLElement>("#xMark"), rail = q<HTMLElement>("#xRail"), list = q<HTMLElement>("#xCards");
-  const count = q<HTMLElement>("#xCount"), bar = q<HTMLElement>("#xBar"), trail = q<SVGPathElement>("#xTrail");
+  const count = q<HTMLElement>("#xCount"), bar = q<HTMLElement>("#xBar"), trail = q<SVGPathElement>("#xTrail"), glow = q<SVGPathElement>("#xGlow");
   const rings = [...sec.querySelectorAll<HTMLElement>(".xring")];
   const cards = [...list.children] as HTMLElement[];
 
+  let lastLabel = "";
   let grid = true, xw = 360, fy = 0, hMax = 0;
   let hFull: number[] = [], hComp: number[] = [], slots: Slot[] = [];
   let comp: boolean[] = [], ch: number[] = [];
@@ -85,7 +86,8 @@ export function initExperience(reduce: boolean) {
     plane.style.opacity = (tin * (1 - 0.7 * f)).toFixed(3);
     mark.style.opacity = (tin * (1 - f)).toFixed(3);
     rail.style.opacity = f.toFixed(3);
-    trail.style.strokeDashoffset = (ROAD.total - len).toFixed(1);
+    const off = (ROAD.total - len).toFixed(1);
+    trail.style.strokeDashoffset = off; glow.style.strokeDashoffset = off;
     rings.forEach((el, i) => {
       const near = p >= ARRIVE[i] - 0.03, gone = p >= LEAVE[i] + 0.02;
       el.classList.toggle("on", near && !gone); el.classList.toggle("done", near && gone);
@@ -109,7 +111,8 @@ export function initExperience(reduce: boolean) {
       c.style.setProperty("--stem", (1 - fi).toFixed(2));
     });
     const idx = Math.max(1, ARRIVE.filter((a) => p >= a - 0.04).length);
-    count.textContent = "0" + idx + " / 03";
+    const label = "0" + idx + " / 03";
+    if (label !== lastLabel) { lastLabel = label; count.textContent = label; }
     bar.style.setProperty("--p", clamp(len / ROAD.wpLen[2], 0, 1).toFixed(3));
   }
 

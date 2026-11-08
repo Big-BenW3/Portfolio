@@ -14,10 +14,11 @@ export default function Experience() {
         </div>
         <div className="xworld" id="xWorld" aria-hidden="true">
           <div className="xplane" id="xPlane">
-            <svg className="xroad" viewBox="0 0 4000 2200" aria-hidden="true">
+            <svg className="xroad" viewBox="1400 0 1200 2200" aria-hidden="true">
               <path className="edge" d={ROAD.d} />
               <path className="bed" d={ROAD.d} />
               <path className="dash" d={ROAD.d} />
+              <path className="glow" id="xGlow" d={ROAD.d} strokeDasharray={ROAD.total} strokeDashoffset={ROAD.total} />
               <path className="trail" id="xTrail" d={ROAD.d} strokeDasharray={ROAD.total} strokeDashoffset={ROAD.total} />
             </svg>
             {ROAD.wp.map(([x, y], i) => (

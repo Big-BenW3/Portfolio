@@ -14,7 +14,7 @@ export const CONFIG = {
     { id: "x", label: "X / Twitter", handle: "@banditdotsol", href: "https://x.com/banditdotsol" },
     { id: "github", label: "GitHub", handle: "github.com/Big-BenW3", href: "https://github.com/Big-BenW3" },
     { id: "mail", label: "Email", handle: "hello@yourdomain.com", href: "mailto:hello@yourdomain.com" },
-    { id: "whatsapp", label: "WhatsApp", handle: "+234 000 000 0000", href: "https://wa.me/2340000000000" },
+    { id: "whatsapp", label: "WhatsApp", handle: "+234 915 627 2530", href: "https://wa.me/2349156272530" },
     { id: "telegram", label: "Telegram", handle: "@JustthatBen", href: "https://t.me/JustthatBen" },
   ] satisfies SiteLink[],
 };
