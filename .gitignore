@@ -1,10 +1,5 @@
-node_modules/
-.next/
-out/
-build/
-next-env.d.ts
+node_modules
+.next
+.vercel
 *.tsbuildinfo
-.env*
-
-# QA artefacts written by scripts/smoke.mjs
-screenshots/
+next-env.d.ts

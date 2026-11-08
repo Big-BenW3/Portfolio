@@ -1,15 +1,10 @@
 import type { NextConfig } from "next";
 
-/**
- * Unlike the old Vite/TanStack config there is no `nitro()`/`serverDir` here:
- * Next has a native Vercel target, so the build needs no adapter.
- *
- * The platform chrome that used to be a Vite plugin + Nitro middleware
- * (`grokPwaPlugin`, `server/middleware/grok-pwa.ts`) now lives in
- * `src/middleware.ts`; see that file for what it reproduces.
- */
+// The site is one hand-built HTML file in /public. Next serves it at "/" so the
+// existing Vercel project (Next.js preset) keeps deploying with no settings change.
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
+  async rewrites() {
+    return { beforeFiles: [{ source: "/", destination: "/index.html" }], afterFiles: [], fallback: [] };
+  },
 };
-
 export default nextConfig;
