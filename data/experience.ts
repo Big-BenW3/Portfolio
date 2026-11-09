@@ -25,12 +25,12 @@ export const EXP: Role[] = [
     ],
   },
   {
-    when: "2026 — Present", h: 18, role: "Mobile developer", org: "Sammyjay Software Solutions Limited",
-    summary: "Part of the team building mobile products for the company’s clients.",
+    when: "2026 — Present", h: 18, role: "Junior frontend engineer", org: "Sammyjay Software Solutions Limited",
+    summary: "Building responsive web applications with designers and backend engineers.",
     points: [
-      "Build and maintain cross-platform mobile apps",
-      "Work with backend and design to take features from ticket to release",
-      "Keep the codebase structured so new screens never mean a rewrite",
+      "Turn high-fidelity designs into pixel-perfect, maintainable frontend code",
+      "Integrate the frontend with REST APIs, databases and third-party services",
+      "Own performance work, cross-platform debugging and feature rollouts",
     ],
   },
 ];
