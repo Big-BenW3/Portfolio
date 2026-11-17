@@ -67,4 +67,8 @@ export const WORK_B: Project[] = [
     desc: "Escrow for cross-border freelance work. A client pays in BOB, funds sit in non-custodial Stellar escrow, and the freelancer gets USDC the moment milestones are approved.",
     tags: ["Next.js", "Prisma", "Stellar", "Pollar"],
     live: "https://bridgepay-eight.vercel.app/", gh: GH + "bridgepay" },
+  { h: 356, kind: "Game · Realtime", shot: "hushtown", name: "Hushtown",
+    desc: "A realtime online Mafia game for 5 to 15 players, one phone each and no accounts. The server deals the roles and keeps every secret, with live chat for the town, the mafia and the dead.",
+    tags: ["Next.js", "TypeScript", "Realtime SSE", "Zod"],
+    live: "https://hush-town.vercel.app", gh: GH + "Hushtown" },
 ];
